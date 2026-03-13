@@ -1,0 +1,34 @@
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+product:
+  service:
+    url: ""
+spring:
+  config:
+    activate:
+      on-profile: local
+  application:
+    name: ordering-service
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver  #드라이버
+    url: jdbc:mariadb://database-1.cz4i2280gusn.ap-northeast-2.rds.amazonaws.com:3306/ordermsa?useSSL=true&verifyServerCertificate=false  #mariadb 주소 / 스키마명
+    username: admin
+    password: vRRsCzmp9SvJBU9cyQUq
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+
+    show_sql: true
+  redis:
+    host: localhost
+    port: 6379
+  kafka:
+    kafka-server: localhost:9092
