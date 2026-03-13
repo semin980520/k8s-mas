@@ -3,7 +3,7 @@ server:
 
 eureka:
   client:
-    c
+    enabled: false
 
 spring:
   config:
