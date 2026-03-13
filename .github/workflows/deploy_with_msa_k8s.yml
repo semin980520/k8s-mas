@@ -75,10 +75,10 @@ jobs:
           -f ./3.msa/product/Dockerfile ./3.msa/product
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
-      - name: ordering kubectl apply
+      - name: product kubectl apply
         run: |
-          kubectl apply -f ./3.msa/ordering/k8s/depl_svc.yml
-          kubectl rollout restart deployment ordering-depl -n se
+          kubectl apply -f ./3.msa/product/k8s/depl_svc.yml
+          kubectl rollout restart deployment member-depl -n se
 
       - name: ordering build and push
         env:
